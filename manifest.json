@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Stremio Open Addon Manager",
-  "version": "1.0",
+  "version": "1.1",
 
   "description": "Adds a button to your addons page that copies your auth key and open the community Stremio addon manager site.",
 

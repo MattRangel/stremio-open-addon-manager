@@ -1,5 +1,6 @@
 const key = JSON.parse(localStorage.getItem("profile"))?.auth?.key;
-const addonManagerLink = "https://addon-manager.dontwanttos.top/"
+const addonManagerLink = "https://addon-manager.dontwanttos.top/";
+const buttonId = "edit-order-button";
 
 function handleButtonClick() {
   navigator.clipboard.writeText(key);
@@ -14,6 +15,7 @@ function setupButton() {
   editOrderButton.style = "color: white; font-weight: bold; right: unset;"
   editOrderButton.innerText = "Edit Order";
   editOrderButton.addEventListener("click", handleButtonClick);
+  editOrderButton.id = buttonId;
 
   addonButton.insertAdjacentElement('beforebegin', editOrderButton);
 };
@@ -25,8 +27,16 @@ const insertButtonObserver = new MutationObserver((_, observer) => {
   }
 });
 
+function buttonIsOnPage() {
+  return !!document.querySelector(`#${buttonId}`);
+}
+
+function pageIsAddons() {
+  return /#\/addons.*/.test(window.location.href);
+}
+
 function insertButton() {
-  if (/#\/addons.*/.test(window.location.href)) {
+  if (pageIsAddons() && !buttonIsOnPage()) {
     insertButtonObserver.observe(document.body, {
       attributes: false,
       characterData: false,
