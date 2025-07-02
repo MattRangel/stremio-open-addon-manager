@@ -2,7 +2,7 @@
 Adds a button to your addons page that copies your auth key and opens the community Stremio addon manager site.
 
 ## How to Install
-Firefox & Chrom Extensions - Comming Soon
+Firefox & Chrome Extensions - Comming Soon
 [UserScript](https://github.com/MattRangel/stremio-open-addon-manager/releases)
 
 ## Previews
