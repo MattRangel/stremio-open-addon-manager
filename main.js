@@ -1,9 +1,12 @@
-const key = JSON.parse(localStorage.getItem("profile"))?.auth?.key;
 const addonManagerLink = "https://addon-manager.dontwanttos.top/";
 const buttonId = "edit-order-button";
 
+function getKey() {
+  JSON.parse(localStorage.getItem("profile"))?.auth?.key;
+}
+
 function handleButtonClick() {
-  navigator.clipboard.writeText(key);
+  navigator.clipboard.writeText(getKey());
   window.open(addonManagerLink, "_blank");
 }
 
