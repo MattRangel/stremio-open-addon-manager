@@ -1,4 +1,9 @@
-const addonManagerLink = "https://addon-manager.dontwanttos.top/";
+var addonManagerLink = "";
+(async () => (
+  addonManagerLink = (await browser.storage.sync.get("addonManagerLink")).addonManagerLink ||
+    "https://addon-manager.dontwanttos.top/"
+))();
+
 const buttonId = "edit-order-button";
 
 function getKey() {

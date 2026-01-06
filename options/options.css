@@ -1,0 +1,13 @@
+button {
+  cursor: pointer;
+}
+
+#reset {
+  display: none;
+}
+
+.unsaved {
+  & #reset {
+    display: inline-block;
+  }
+}
